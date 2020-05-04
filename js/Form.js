@@ -22,12 +22,6 @@ class Form {
     this.button.position(displayWidth/2 + 30, displayHeight/2);
     this.reset.position(displayWidth-100,20);
 
-    this.reset.mousePressed(()=>{
-        game.update(0);
-        player.updateCount(0);
-
-    });
-
     this.button.mousePressed(()=>{
       this.input.hide();
       this.button.hide();
@@ -38,6 +32,12 @@ class Form {
       player.updateCount(playerCount);
       this.greeting.html("Hello " + player.name)
       this.greeting.position(displayWidth/2 - 70, displayHeight/4);
+    });
+
+    this.reset.mousePressed(()=>{
+      player.updateCount(0);
+      game.update(0);
+      Player.updateCarsatend(0);
     });
 
   }
